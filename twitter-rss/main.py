@@ -31,6 +31,7 @@ def read_user(username: str):
 
     response = client.get_users_tweets(
         id=user.id,
+        max_results=100,
         expansions=["author_id", "attachments.media_keys"],
         media_fields=["url"],
         tweet_fields=["created_at"],
