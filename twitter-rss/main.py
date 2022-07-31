@@ -1,5 +1,6 @@
 import tweepy
 from fastapi import FastAPI, Response
+from fastapi.responses import RedirectResponse
 from feedgen.feed import FeedGenerator
 from pydantic import BaseSettings
 
@@ -20,9 +21,9 @@ client = tweepy.Client(bearer_token=settings.twitter_bearer_token)
 app = FastAPI()
 
 
-@app.get("/user/{username}")
-def read_user(username: str):
-    user: tweepy.User = client.get_user(username=username).data
+@app.get("/user/{id}")
+def read_user(id: int):
+    user: tweepy.User = client.get_user(id=id).data
 
     fg = FeedGenerator()
     fg.title(f"{user.name} / @{user.username}")
@@ -78,3 +79,10 @@ def read_user(username: str):
         fe.pubDate(tweet.created_at)
 
     return Response(content=fg.rss_str(pretty=True), media_type="application/xml")
+
+
+@app.get("/username/{username}")
+def read_username(username: str):
+    user: tweepy.User = client.get_user(username=username).data
+
+    return RedirectResponse(f"/user/{user.id}")
