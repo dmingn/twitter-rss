@@ -1,0 +1,9 @@
+services:
+  twitter-rss:
+    build: .
+    image: twitter-rss:latest
+    pull_policy: build
+    env_file:
+      - ./.env
+    ports:
+      - 8000:8000
