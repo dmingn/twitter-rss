@@ -6,7 +6,7 @@ profile = "black"
 
 [tool.poetry]
 name = "twitter-rss"
-version = "0.1.0"
+version = "2022.07.31.1"
 description = ""
 authors = ["dmingn <dmingn@users.noreply.github.com>"]
 
