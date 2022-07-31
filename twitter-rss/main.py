@@ -66,9 +66,8 @@ def read_user(username: str):
             rel="alternate",
         )
         fe.description(
-            f"<![CDATA[<p>{tweet.text}</p>"
+            f"<p>{tweet.text}</p>"
             + "".join([f'<img src="{media_url}" />' for media_url in media_urls])
-            + "]]>"
         )
         fe.author(
             name=f"{author.name} / @{author.username}",
