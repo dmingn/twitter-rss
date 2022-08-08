@@ -21,8 +21,15 @@ client = tweepy.Client(bearer_token=settings.twitter_bearer_token)
 app = FastAPI()
 
 
-@app.get("/user/{id}")
-def read_user(id: int):
+@app.get("/user/{username}")
+def read_users_tweets(username: str):
+    user: tweepy.User = client.get_user(username=username).data
+
+    return RedirectResponse(f"/userid/{user.id}")
+
+
+@app.get("/userid/{id}")
+def read_users_tweets_by_id(id: int):
     user: tweepy.User = client.get_user(id=id).data
 
     fg = FeedGenerator()
@@ -79,10 +86,3 @@ def read_user(id: int):
         fe.pubDate(tweet.created_at)
 
     return Response(content=fg.rss_str(pretty=True), media_type="application/xml")
-
-
-@app.get("/username/{username}")
-def read_username(username: str):
-    user: tweepy.User = client.get_user(username=username).data
-
-    return RedirectResponse(f"/user/{user.id}")
