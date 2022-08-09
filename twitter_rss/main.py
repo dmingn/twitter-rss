@@ -46,7 +46,7 @@ def read_users_tweets_by_id(id: int):
     fg = FeedGenerator()
     fg.title(f"{user.name} / @{user.username}")
     fg.link(href=f"https://twitter.com/{user.username}", rel="alternate")
-    fg.description(f"Twitter feed for: @{user.username}.")
+    fg.description(f"Twitter feed for: {user.name} / @{user.username}.")
 
     tweets = client.get_users_tweets(id=user.id)
 
