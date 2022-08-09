@@ -1,5 +1,5 @@
 import tweepy
-from fastapi import FastAPI, Response
+from fastapi import FastAPI, Request, Response
 from fastapi.responses import RedirectResponse
 from feedgen.feed import FeedGenerator
 from pydantic import BaseSettings
@@ -33,10 +33,10 @@ app = FastAPI()
 
 
 @app.get("/user/{username}")
-def read_users_tweets(username: str):
+def read_users_tweets(username: str, request: Request):
     user = client.get_user_by_username(username=username)
 
-    return RedirectResponse(f"/userid/{user.id}")
+    return RedirectResponse(request.scope.get("root_path", "") + f"/userid/{user.id}")
 
 
 @app.get("/userid/{id}")
