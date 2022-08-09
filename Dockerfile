@@ -33,6 +33,6 @@ WORKDIR /twitter-rss
 
 COPY --from=install-requirements /usr/local/lib/python3.10/site-packages /usr/local/lib/python3.10/site-packages
 
-COPY twitter-rss ./twitter-rss
+COPY twitter_rss ./twitter_rss
 
-ENTRYPOINT ["python", "-m", "uvicorn", "twitter-rss.main:app", "--host", "0.0.0.0"]
+ENTRYPOINT ["python", "-m", "uvicorn", "twitter_rss.main:app", "--host", "0.0.0.0"]
