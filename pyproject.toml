@@ -20,7 +20,7 @@ tweepy = "^4.10.0"
 uvicorn = {extras = ["standard"], version = "^0.18.2"}
 
 [tool.poetry.dev-dependencies]
-black = "^22.6.0"
+black = "^24.10.0"
 isort = {extras = ["pyproject"], version = "^5.10.1"}
 mypy = "^0.961"
 pydocstyle = "^6.1.1"
