@@ -25,7 +25,7 @@ isort = {extras = ["pyproject"], version = "^5.10.1"}
 mypy = "^0.961"
 pydocstyle = "^6.3.0"
 pyproject-flake8 = "^0.0.1-alpha.4"
-types-cachetools = "^5.2.1"
+types-cachetools = "^5.5.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
