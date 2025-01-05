@@ -21,7 +21,7 @@ uvicorn = {extras = ["standard"], version = "^0.34.0"}
 
 [tool.poetry.dev-dependencies]
 black = "^24.10.0"
-isort = {extras = ["pyproject"], version = "^5.10.1"}
+isort = {extras = ["pyproject"], version = "^5.13.2"}
 mypy = "^0.961"
 pydocstyle = "^6.3.0"
 pyproject-flake8 = "^0.0.1-alpha.4"
