@@ -23,7 +23,7 @@ uvicorn = {extras = ["standard"], version = "^0.18.2"}
 black = "^24.10.0"
 isort = {extras = ["pyproject"], version = "^5.10.1"}
 mypy = "^0.961"
-pydocstyle = "^6.1.1"
+pydocstyle = "^6.3.0"
 pyproject-flake8 = "^0.0.1-alpha.4"
 types-cachetools = "^5.2.1"
 
