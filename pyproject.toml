@@ -15,7 +15,7 @@ python = "^3.10"
 cachetools = "^5.5.0"
 fastapi = "^0.115.6"
 feedgen = "^1.0.0"
-pydantic = "^1.10.19"
+pydantic = "^2.10.5"
 tweepy = "^4.14.0"
 uvicorn = {extras = ["standard"], version = "^0.34.0"}
 
